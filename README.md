@@ -52,6 +52,7 @@ No offense, just want to make them less noisy.
 
 Unfortunately, I have to make use of [`__prepare__`](https://www.python.org/dev/peps/pep-3115/#id11), which is introduced only to [python 3](https://www.python.org/dev/peps/pep-3115/).
 That means there is no known possible backward compatibility with python 2 now.
+The code is tested against python 3.5+.
 
 There are a couple of issues, with which I am talking. Contributions are welcome.
 

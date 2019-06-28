@@ -2,20 +2,16 @@ dist: xenial   # required for Python >= 3.7
 language: python
 python:
   # CPython
-  - "3.3"
-  - "3.4"
   - "3.5"
+  - "3.5-dev"
   - "3.6"
+  - "3.6-dev"
   - "3.7"
-  - "3.7-dev"  # 3.7 development branch
-  - "3.8-dev"  # 3.8 development branch
-  - "nightly"  # nightly build
+  - "3.7-dev"
+  - "3.8-dev"
+  - "nightly"
   # PyPy
-  - "pypy3.3"
-  - "pypy3.4"
   - "pypy3.5"
-  - "pypy3.6"
-  - "pypy3.7"
 # command to install dependencies
 install:
   - pip install pytest
