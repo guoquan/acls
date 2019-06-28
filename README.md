@@ -1,5 +1,7 @@
 # `@cls` - Class Made Aware to Decorator
 
+[![CircleCI](https://circleci.com/gh/guoquan/cls/tree/master.svg?style=svg)](https://circleci.com/gh/guoquan/cls/tree/master)
+
 The purpose of this library is to provide possibility to create decorators, especially in super classes, with current class `cls` as argument.
 Everything are centered with our new `cls` module, keyword, magic, or what every you think it would be.
 
