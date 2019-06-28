@@ -85,14 +85,14 @@ class ClsMeta(type):
     # 3. Executing the class body
     # 4. Creating the class object
     # def __call__(name, bases, namespace, **kwds):
-    def __new__(meta, name, bases, namespace, **kwds):
+    #     def __new__(meta, name, bases, namespace, **kwds):
         #     4.1.0 colloct descriptors
         #     4.1.1 for each descriptor call __set_name__(self, owner, name)
-        cls = type.__new__(meta, name, bases, namespace, **kwds)
+        #     4.1.2 init cls
+    def __init__(cls, name, bases, namespace):
         delegator = namespace.pop('cls')
         delegator.realize(cls)
+        cls = type.__init__(cls, name, bases, namespace)
         return cls
 
-        #     4.1.2 init cls
-        #     def __init__(cls, name, bases, namespace):
     # 5. Nothing more, ready to go
