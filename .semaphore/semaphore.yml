@@ -7,8 +7,6 @@ agent:
 blocks:
   - name: "Unit tests"
     task:
-      secrets:
-        - name: acls-codecov
       prologue:
         commands:
           # Add --local pip bin to $PATH
@@ -17,11 +15,10 @@ blocks:
           - mkdir .pip_cache
           - cache restore pip-$SEMAPHORE_GIT_BRANCH, pip-master
           # Use --user to avoid permission conflicts
-          - pip install --user --cache-dir .pip_cache -U pytest codecov pytest-cov
+          - pip install --user --cache-dir .pip_cache -U pytest
           - cache store pip-$SEMAPHORE_GIT_BRANCH .pip_cache
           - pip install --user --cache-dir .pip_cache .
       jobs:
       - name: pytest
         commands:
-          - pytest --cov=./ test_cls
-          - codecov
+          - pytest test_cls
