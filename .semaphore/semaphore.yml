@@ -23,4 +23,4 @@ blocks:
       jobs:
       - name: pytest
         commands:
-          - pytest --cov=./ test_cls
+          - pytest test_cls
