@@ -7,8 +7,6 @@ agent:
 blocks:
   - name: "Unit tests"
     task:
-      secrets:
-        - name: acls-codecov
       prologue:
         commands:
           # Add --local pip bin to $PATH
