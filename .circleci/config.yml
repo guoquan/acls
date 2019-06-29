@@ -12,18 +12,16 @@ jobs:
       - run: mkdir .pip_cache
       - restore_cache:
           keys:
-            #- pip-{{ .Branch }}-{{ checksum ".circleci/config.yml" }}-{{ checksum "requirements.txt" }}
-            - pip-{{ .Branch }}-{{ checksum ".circleci/config.yml" }}-
+            - pip-{{ .Branch }}-{{ checksum ".circleci/config.yml" }}
             - pip-{{ .Branch }}-
             - pip-
       - run:
           name: install python dependencies
           command: |
-            pip install --user --cache-dir .pip_cache pytest pytest-cov
-            if [ -e requirements.txt ]; then pip install --user --cache-dir .pip_cache -r requirements.txt; fi
+            pip install --user --cache-dir .pip_cache -U pytest codecov pytest-cov
             pip install --user --cache-dir .pip_cache .
       - save_cache:
-          key: pip-{{ .Branch }}-{{ checksum ".circleci/config.yml" }}-{{ checksum "requirements.txt" }}
+          key: pip-{{ .Branch }}-{{ checksum ".circleci/config.yml" }}
           paths:
             - ".pip_cache"
       - run: |
