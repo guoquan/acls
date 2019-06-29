@@ -1,10 +1,13 @@
 # `@cls` - Class Made Aware to Decorator
 
+![GitHub](https://img.shields.io/github/license/guoquan/acls.svg)
+|
 [![CircleCI](https://circleci.com/gh/guoquan/acls/tree/master.svg?style=svg)](https://circleci.com/gh/guoquan/acls/tree/master)
 |
 [![Build Status](https://travis-ci.org/guoquan/acls.svg?branch=master)](https://travis-ci.org/guoquan/acls)
 |
-![GitHub](https://img.shields.io/github/license/guoquan/acls.svg)
+[![codecov](https://codecov.io/gh/guoquan/acls/branch/master/graph/badge.svg)](https://codecov.io/gh/guoquan/acls)
+
 
 The purpose of this library is to provide possibility to create decorators, especially in super classes, with current class `cls` as argument.
 Everything are centered with our new `cls` module, keyword, magic, or what every you think it would be.
@@ -52,15 +55,18 @@ No offense, just want to make them less noisy.
 
 ## Limitations
 
-Unfortunately, I have to make use of [`__prepare__`](https://www.python.org/dev/peps/pep-3115/#id11), which is introduced only to [python 3](https://www.python.org/dev/peps/pep-3115/).
-That means there is no known possible backward compatibility with python 2 now.
+Unfortunately, This work is based on [customizing python class creation](https://docs.python.org/3/reference/datamodel.html#customizing-class-creation).
+I have to make use of [`__prepare__`](https://www.python.org/dev/peps/pep-3115/#id11), which is [introduced](https://www.python.org/dev/peps/pep-3115/) only to [python 3](https://docs.python.org/3/reference/datamodel.html#customizing-class-creation).
+That means there is no known possible backward compatibility with [python 2](https://docs.python.org/2/reference/datamodel.html#customizing-class-creation) now.
 The code is tested against python 3.5+.
+
+Please let me know if you come up with an idea how to manipulate class creation in python 2.
 
 There are a couple of issues, with which I am talking. Contributions are welcome.
 
 ### Known issue
 
 - [ ] relying on length of arguments and `callable()` to support optional arguments in decorator
-- [ ] not compatible with `@classmethod`, and many other decorators
+- [ ] not compatible with `@classmethod`, or many other decorators
 - [ ] make `pylint` really noisy
 - [ ] no documents :see_no_evil:!

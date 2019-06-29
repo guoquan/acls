@@ -7,6 +7,8 @@ agent:
 blocks:
   - name: "Unit tests"
     task:
+      secrets:
+        - name: acls-codecov
       prologue:
         commands:
           # Add --local pip bin to $PATH
@@ -15,11 +17,12 @@ blocks:
           - mkdir .pip_cache
           - cache restore pip-$SEMAPHORE_GIT_BRANCH-$(checksum requirements.txt),pip-$SEMAPHORE_GIT_BRANCH,pip-master
           # Use --user to avoid permission conflicts
-          - pip install --user --cache-dir .pip_cache pytest
+          - pip install --user --cache-dir .pip_cache pytest pytest-cov
           - if [ -e requirements.txt ]; then pip install --user --cache-dir .pip_cache -r requirements.txt; fi
           - cache store pip-$SEMAPHORE_GIT_BRANCH-$(checksum requirements.txt) .pip_cache
-          - export PYTHONPATH=.:$PYTHONPATH
+          - pip install --user --cache-dir .pip_cache .
       jobs:
       - name: pytest
         commands:
-          - pytest test_cls
+          - pytest --cov=./ test_cls
+          - codecov

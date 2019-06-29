@@ -19,13 +19,16 @@ jobs:
       - run:
           name: install python dependencies
           command: |
-            pip install --user --cache-dir .pip_cache pytest
+            pip install --user --cache-dir .pip_cache pytest pytest-cov
             if [ -e requirements.txt ]; then pip install --user --cache-dir .pip_cache -r requirements.txt; fi
+            pip install --user --cache-dir .pip_cache .
       - save_cache:
           key: pip-{{ .Branch }}-{{ checksum ".circleci/config.yml" }}-{{ checksum "requirements.txt" }}
           paths:
             - ".pip_cache"
-      - run: pytest test_cls
+      - run: |
+          pytest --cov=./ test_cls
+          codecov
 
 workflows:
   version: 2
