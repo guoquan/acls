@@ -1,18 +1,29 @@
 # `@cls` - Class Made Aware to Decorator
 
-![GitHub](https://img.shields.io/github/license/guoquan/acls.svg)
-|
+[![PyPI - License](https://img.shields.io/pypi/l/acls.svg)](https://pypi.org/project/acls/)
+[![PyPI](https://img.shields.io/pypi/v/acls.svg)](https://pypi.org/project/acls/)
+[![PyPI - Status](https://img.shields.io/pypi/status/acls.svg)](https://pypi.org/project/acls/)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/acls.svg)](https://pypi.org/project/acls/)
+
+[![GitHub](https://img.shields.io/github/license/guoquan/acls.svg)](LICENSE)
 [![CircleCI](https://circleci.com/gh/guoquan/acls/tree/master.svg?style=svg)](https://circleci.com/gh/guoquan/acls/tree/master)
-|
 [![Build Status](https://travis-ci.org/guoquan/acls.svg?branch=master)](https://travis-ci.org/guoquan/acls)
-|
 [![codecov](https://codecov.io/gh/guoquan/acls/branch/master/graph/badge.svg)](https://codecov.io/gh/guoquan/acls)
 
 
 The purpose of this library is to provide possibility to create decorators, especially in super classes, with current class `cls` as argument.
 Everything are centered with our new `cls` module, keyword, magic, or what every you think it would be.
 
-## Get Start
+## Getting Started
+
+### Installation
+
+Install by `pip` from PyPI:
+```bash
+pip install acls
+```
+
+### Example
 
 A typical snippet looks like:
 
@@ -70,3 +81,7 @@ There are a couple of issues, with which I am talking. Contributions are welcome
 - [ ] not compatible with `@classmethod`, or many other decorators
 - [ ] make `pylint` really noisy
 - [ ] no documents :see_no_evil:!
+
+## License
+
+[MIT License, Copyright (c) 2019 guoquan](LICENSE)
