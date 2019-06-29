@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="acls",
-    version="1.0.0",
+    version="1.0.1",
     author="guoquan",
     author_email="guoquanscu@gmail.com",
     description="`@cls` - Class Made Aware to Decorator",
