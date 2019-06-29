@@ -1,30 +1,24 @@
-dist: xenial   # required for Python >= 3.7
+dist: xenial
 language: python
 python:
-  # CPython
-  - "3.5"
-  - "3.5-dev"
-  - "3.6"
-  - "3.6-dev"
-  - "3.7"
-  - "3.7-dev"
-  - "3.8-dev"
-  - "nightly"
-  # PyPy
-  - "pypy3.5"
-# command to install dependencies
+- '3.5'
+- 3.5-dev
+- '3.6'
+- 3.6-dev
+- '3.7'
+- 3.7-dev
+- 3.8-dev
+- nightly
+- pypy3.5
 install:
-  - pip install -U pytest codecov pytest-cov
-  - pip install .
-# command to run tests
+- pip install -U pytest codecov pytest-cov
+- pip install .
 script:
-  - pytest --cov=./ test_cls
-
+- pytest --cov=./ test_cls
 after_success:
-  - codecov
-
+- codecov
 deploy:
   provider: pypi
-  user: "guoquan"
+  user: guoquan
   password:
-    secure: "hYe3XJjsZAGJSjiizgPiOTzvWGJtTSJ78MgzIVCnF7RViazwayMWbMurR/9Mn2aXbVb8eO1oDE/ZBuNiw+XygpiLvadUBO2LaludjJU2G4gQv2+UmC7A9R32hsU9OBmSkI2o2mH2d8InsgqyRqi/RhnG7EPILVqO71V92NmGPqShpYq5+yhBtnBaMPpNJI7GnskagXDVYxcyDvNpsu/C5fI3MFdn31LaYLJ+r8KLqfbI7b3vEze96VaULuqZ9v23Oa8EHJ/V4uhRZx6rqFkE8bXB2Lb4C6rpLxaNCFnlMwUXf7w8j0N6A7wa7KcOJile6h+GSj8bLz5TVPr9nSOc/LxBniQdExKx121BPT9FtWHMnXUrQJGLpd81rVGDhd9bFxsl1taPX1DLcsmLliMCHlfpc1GDp+fJjRsZG3w77psMdvc5oP6Rue74Bi0eEzhNuZfb7Ug16QB233iixvToaDW29KUJyLZZ3pHlTm0VpbHPBo3lJ7mheYxqToSg7GRGv+6dfFqoYsDfQzVdDrjDhGxg0FTyZjmb9Q6u23vDVNXmJC8lIpPSYWLZNsplcUAPZwHNL5vS/uw5wslbfwOjV+cTgwV5sZSdALzPRQptRmnI6Ryeu3yCnnid2eGnsYiGbuT+K3WNnCFaEFGkzMNrobOJ1UY+4kJnB/J9MrJfrSk="
+    secure: "RFPgllBLZxpnXEvfC/g9yUeXganddKbymlbwNNqoN6cwsiUTpJymizLQG6LSoRXLD2ly5z18kAji4aLtCrbi+n2gakG3buy4Jy3PnK4cqKum18jNbGDCtBrDGhiu0455yhlwEoWu8sRPL4QHuCsb5SDMp4Qrl+/uLrLqijZIUceJIyD/XQavfCCP1RBcOwrlL9/pBjAjHS26oEx6jc+l1oTR6NqjCYlGIh8+TjVz0QFyzTOQqoM7eaP09N1iuD0u2GxJqifO/CrLdAA4lgJ20d9RLtPNSLPrcLRxDwTz2X5QMpVs2mnn7iA+EVx4zayRP9KLOSjIOJ4T/Qf/Q1LfvZFZWaqdfi5QFu6xnvwNkuaqg1MnDAEzM+qLxB1K/9TMM75iRGto5owDhyWeKEu4Vj1MI+DACo4vI660UzLrasXDA0aVdlk+OyrqR3pLHSGPTsWgIvXHnxCwRDvmMbCo08Y4WCmo17rZrH+fjhJH5KXR1f7qvILuREt3A8cmn5X4t4V6Dv0sVli6wQWppb8LgpmNfZgDDW1k6Om5vMkNkbyie8AuPb7gImZyiGY/BCGeO/54yBmDLlaJ346z2TajV6A97SVLeU9oG1VbmnsfuSNrp5ws+EfSN3zwDEepa2ANjqHphkRUltqKDPjtS0pV3D0Bde/QbClLIyz6FJsAJ/s="
