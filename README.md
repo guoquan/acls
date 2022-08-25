@@ -9,6 +9,7 @@
 [![CircleCI](https://circleci.com/gh/guoquan/acls/tree/master.svg?style=svg)](https://circleci.com/gh/guoquan/acls/tree/master)
 [![Build Status](https://travis-ci.org/guoquan/acls.svg?branch=master)](https://travis-ci.org/guoquan/acls)
 [![codecov](https://codecov.io/gh/guoquan/acls/branch/master/graph/badge.svg)](https://codecov.io/gh/guoquan/acls)
+[![CodeFactor](https://www.codefactor.io/repository/github/guoquan/acls/badge)](https://www.codefactor.io/repository/github/guoquan/acls)
 
 
 The purpose of this library is to provide possibility to create decorators, especially in super classes, with current class `cls` as argument.
